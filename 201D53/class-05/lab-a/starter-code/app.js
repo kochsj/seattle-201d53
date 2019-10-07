@@ -52,8 +52,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var sumOfThreeNumbers = a + b + c;
-    var productOfThreeNumbers = a * b * c;
+    var sumOfThreeNumbers = sum((sum(a, b)[0]), c)[0];
+    var productOfThreeNumbers = multiply((multiply(a, b)[0]), c)[0];
     var thirdElement = a + ' and ' + b + ' and ' + c + ' sum to ' + sumOfThreeNumbers + '.';
     var fourthElement = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productOfThreeNumbers + '.';
     return [sumOfThreeNumbers, productOfThreeNumbers, thirdElement, fourthElement];
@@ -78,7 +78,7 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-    var sumArr = testArray[0] + testArray[1] + testArray[2];
+    var sumArr = sum(sum(testArray[0], testArray[1])[0], testArray[2])[0];
     var exactString = '' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumArr + ' is their sum.';
     return [sumArr, exactString];
 }
