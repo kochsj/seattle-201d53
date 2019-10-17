@@ -7,7 +7,7 @@ table.addEventListener('click', removeItemFromCart);
 var cart;
 
 function loadCart() {
-  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  var cartItems = JSON.parse(localStorage.getItem('cartData')) || [];
   cart = new Cart(cartItems);
 }
 
@@ -50,7 +50,7 @@ function showCart() {
       tableCartRow.appendChild(deleteTDTag);
       rowCounter++;
 }
-
+var deleteTDTag = document.getElementById('cart');
 deleteTDTag.addEventListener('click', removeItemFromCart);
 
 function removeItemFromCart(event) {
