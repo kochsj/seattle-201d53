@@ -10,7 +10,6 @@ Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
   var createCartItem = new CartItem(product, quantity);
   Cart.items.push(createCartItem);
-
 };
 
 Cart.prototype.saveToLocalStorage = function() {
@@ -26,8 +25,7 @@ Cart.prototype.saveToLocalStorage = function() {
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
-  Cart.items.remove(item);
-  
+  Cart.items.remove(item); 
 };
 
 var CartItem = function(product, quantity) {
