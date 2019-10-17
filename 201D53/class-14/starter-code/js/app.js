@@ -10,7 +10,6 @@ Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
   var createCartItem = new CartItem(product, quantity);
   Cart.items.push(createCartItem);
-
 };
 
 Cart.prototype.saveToLocalStorage = function() {
