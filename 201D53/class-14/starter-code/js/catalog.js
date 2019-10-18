@@ -1,7 +1,7 @@
 /* global Product, Cart */
 
 'use strict';
-
+var itemCounter = 0;
 // Set up an empty cart for use on this page.
 var cart = new Cart([]);
 
@@ -32,7 +32,7 @@ function handleSubmit(event) {
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
-
+  
 }
 
 // TODO: Add the selected item and quantity to the cart
@@ -40,7 +40,8 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   var targetName = event.target.items.value;
   // TODO: get the quantity
-var targetQuantity = event.target.quantity.value;
+  var targetQuantity = event.target.quantity.value;
+  itemCounter += Number(targetQuantity);
   // TODO: using those, add one item to the Cart
   console.log('target name: ' + targetName);
   console.log('quantity: ' + targetQuantity);
@@ -50,7 +51,7 @@ var targetQuantity = event.target.quantity.value;
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
  var itemCount = document.getElementById('itemCount');
-  itemCount.textContent = `${Cart.items}`;
+  itemCount.textContent = itemCounter;
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
